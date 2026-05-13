@@ -1,4 +1,5 @@
 # 🕉️ Gita Ke Slok – Ancient Wisdom for Gen Z
+https://tiwarikamaldeep.github.io/Gita-Ke-Slok-Ancient-wisdom-Gen-Z-energy/
 
 A modern web app that brings the timeless wisdom of the Bhagavad Gita to today's generation.
 
