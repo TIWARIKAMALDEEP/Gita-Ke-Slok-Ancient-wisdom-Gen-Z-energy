@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gita Ke Slok — Ancient Wisdom, Gen Z Energy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet" />
+  <style>/* ===========================
+   GITAVIBES — style.css
+   Dark × Glassmorphism × Gen Z
+=========================== */
+
+/* ── Reset & Root ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #050810;
+  --bg2:       #080d1a;
+  --glass:     rgba(255,255,255,0.05);
+  --glass-b:   rgba(255,255,255,0.08);
+  --border:    rgba(255,255,255,0.09);
+  --border-hi: rgba(255,255,255,0.18);
+
+  --saffron:   #ff7e1b;
+  --gold:      #f5c842;
+  --teal:      #00e5c0;
+  --purple:    #a855f7;
+  --pink:      #ec4899;
+  --blue:      #38bdf8;
+
+  --grad-main: linear-gradient(135deg, #ff7e1b, #f5c842);
+  --grad-teal: linear-gradient(135deg, #00e5c0, #38bdf8);
+  --grad-purp: linear-gradient(135deg, #a855f7, #ec4899);
+
+  --text:      #f0f0f0;
+  --text-muted:#8892a4;
+  --text-dim:  #4a5568;
+
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+  --font-devan:   'Noto Sans Devanagari', sans-serif;
+
+  --radius:  16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --nav-h:   72px;
+  --trans:   cubic-bezier(.4,0,.2,1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--saffron); border-radius: 3px; }
+
+/* ── Selection ── */
+::selection { background: rgba(255,126,27,0.35); color: #fff; }
+
+/* ===========================
+   ANIMATED BACKGROUND
+=========================== */
+.bg-orbs {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;
+}
+.orb {
+  position: absolute; border-radius: 50%; filter: blur(80px); opacity: .28; animation: orbFloat 18s ease-in-out infinite;
+}
+.orb-1 { width: 500px; height: 500px; background: radial-gradient(circle, #ff7e1b55, transparent); top: -100px; left: -100px; animation-duration: 20s; }
+.orb-2 { width: 400px; height: 400px; background: radial-gradient(circle, #a855f755, transparent); bottom: -80px; right: -80px; animation-duration: 24s; animation-delay: -8s; }
+.orb-3 { width: 300px; height: 300px; background: radial-gradient(circle, #00e5c044, transparent); top: 50%; left: 60%; animation-duration: 16s; animation-delay: -4s; }
+.orb-4 { width: 250px; height: 250px; background: radial-gradient(circle, #f5c84244, transparent); top: 30%; left: 20%; animation-duration: 22s; animation-delay: -12s; }
+
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(30px, -40px) scale(1.1); }
+  66%       { transform: translate(-20px, 30px) scale(.9); }
+}
+
+#particles-canvas {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: .45;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: var(--nav-h);
+  background: rgba(5,8,16,0.7); backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--border);
+  transition: background .3s var(--trans);
+}
+.navbar.scrolled { background: rgba(5,8,16,0.92); }
+
+.nav-inner {
+  max-width: 1280px; margin: 0 auto; height: 100%;
+  padding: 0 24px; display: flex; align-items: center; gap: 32px;
+}
+
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none; color: var(--text);
+  font-family: var(--font-display); font-weight: 800; font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.logo-icon { font-size: 1.6rem; animation: spin360 12s linear infinite; display: inline-block; }
+@keyframes spin360 { to { transform: rotate(360deg); } }
+.logo-text { background: var(--grad-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+.nav-links { list-style: none; display: flex; align-items: center; gap: 4px; margin-left: auto; }
+.nav-link {
+  color: var(--text-muted); text-decoration: none; font-size: .9rem; font-weight: 500;
+  padding: 8px 16px; border-radius: 10px; transition: all .25s var(--trans);
+}
+.nav-link:hover, .nav-link.active {
+  color: var(--text); background: var(--glass-b);
+}
+.nav-link.active { color: var(--saffron); }
+
+.nav-actions { display: flex; align-items: center; gap: 12px; margin-left: 16px; }
+
+.streak-badge {
+  display: flex; align-items: center; gap: 5px;
+  background: rgba(255,126,27,.12); border: 1px solid rgba(255,126,27,.25);
+  border-radius: 50px; padding: 6px 12px; font-size: .85rem;
+  cursor: default;
+}
+.streak-fire { font-size: 1rem; }
+.streak-count { font-family: var(--font-display); font-weight: 700; color: var(--saffron); }
+
+.hamburger {
+  display: none; flex-direction: column; gap: 5px; cursor: pointer;
+  background: none; border: none; padding: 8px;
+}
+.hamburger span {
+  display: block; width: 22px; height: 2px; background: var(--text);
+  border-radius: 2px; transition: .3s var(--trans);
+}
+
+/* ===========================
+   MAIN WRAPPER & SECTIONS
+=========================== */
+.main-wrap { position: relative; z-index: 1; padding-top: var(--nav-h); max-width: 1280px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+
+.section { display: none; padding: 60px 0 80px; animation: fadeInUp .5s var(--trans) both; }
+.section.active { display: block; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===========================
+   FADE-UP ON SCROLL
+=========================== */
+.fade-up { opacity: 0; transform: translateY(32px); transition: opacity .7s var(--trans), transform .7s var(--trans); }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ===========================
+   SECTION LABELS & HEADERS
+=========================== */
+.section-label {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--saffron); margin: 48px 0 16px;
+}
+
+.section-header { margin-bottom: 40px; }
+.section-title {
+  font-family: var(--font-display); font-weight: 800; font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.1; margin-bottom: 8px;
+}
+.section-sub { color: var(--text-muted); font-size: 1rem; }
+.emoji-badge { font-style: normal; }
+
+/* ===========================
+   HERO
+=========================== */
+.hero { text-align: center; padding: 80px 0 40px; }
+
+.hero-badge {
+  display: inline-block; font-size: .78rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--gold); background: rgba(245,200,66,.1); border: 1px solid rgba(245,200,66,.25);
+  border-radius: 50px; padding: 6px 16px; margin-bottom: 24px;
+}
+
+.hero-title {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  line-height: 1.08; letter-spacing: -.02em;
+  margin-bottom: 20px;
+}
+
+.gradient-text {
+  background: var(--grad-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub { color: var(--text-muted); font-size: clamp(1rem, 2vw, 1.2rem); margin-bottom: 36px; }
+
+.hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
+
+.stat-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.stat-chip {
+  background: var(--glass); border: 1px solid var(--border);
+  border-radius: 50px; padding: 8px 18px; font-size: .85rem; color: var(--text-muted);
+  backdrop-filter: blur(10px);
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+.btn-primary {
+  background: var(--grad-main); color: #000; font-family: var(--font-display);
+  font-weight: 700; font-size: .95rem; border: none; border-radius: 50px;
+  padding: 14px 28px; cursor: pointer; transition: transform .2s var(--trans), box-shadow .2s var(--trans);
+  box-shadow: 0 4px 24px rgba(255,126,27,.3);
+}
+.btn-primary:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 8px 32px rgba(255,126,27,.45); }
+.btn-primary:active { transform: translateY(0) scale(.98); }
+
+.btn-ghost {
+  background: transparent; color: var(--text); font-family: var(--font-display);
+  font-weight: 600; font-size: .95rem; border: 1px solid var(--border-hi); border-radius: 50px;
+  padding: 14px 28px; cursor: pointer; transition: all .2s var(--trans);
+  backdrop-filter: blur(10px);
+}
+.btn-ghost:hover { background: var(--glass-b); border-color: var(--saffron); color: var(--saffron); }
+
+.btn-sm {
+  font-size: .8rem; padding: 8px 18px; border-radius: 50px;
+  font-family: var(--font-display); font-weight: 600; cursor: pointer; transition: all .2s;
+}
+
+/* ===========================
+   GLASS CARD
+=========================== */
+.glass-card {
+  background: var(--glass); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); backdrop-filter: blur(20px) saturate(160%);
+  transition: border-color .3s var(--trans), transform .3s var(--trans), box-shadow .3s var(--trans);
+}
+.glass-card:hover { border-color: var(--border-hi); }
+
+/* ===========================
+   DAILY CARD (HOME PREVIEW)
+=========================== */
+.daily-card {
+  padding: 32px 36px; margin-bottom: 48px;
+  position: relative; overflow: hidden;
+}
+.daily-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--grad-main);
+}
+.daily-card .dc-chapter {
+  font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--saffron); margin-bottom: 8px;
+}
+.daily-card .dc-sanskrit {
+  font-family: var(--font-devan); font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.8; color: var(--gold); margin-bottom: 16px;
+}
+.daily-card .dc-english {
+  font-size: .95rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 12px;
+}
+.daily-card .dc-hinglish {
+  font-size: .9rem; background: rgba(0,229,192,.06); border-left: 3px solid var(--teal);
+  border-radius: 0 8px 8px 0; padding: 12px 16px; color: var(--text);
+  margin-bottom: 20px;
+}
+.daily-card .dc-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.audio-btn {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(168,85,247,.15); border: 1px solid rgba(168,85,247,.3);
+  border-radius: 50px; padding: 8px 18px; color: var(--purple); font-size: .85rem; font-weight: 600;
+  cursor: pointer; transition: all .2s; font-family: var(--font-display);
+}
+.audio-btn:hover { background: rgba(168,85,247,.25); transform: scale(1.04); }
+.audio-btn.playing { background: rgba(168,85,247,.3); }
+
+/* ===========================
+   CATEGORY GRID
+=========================== */
+.category-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px; margin-bottom: 60px;
+}
+
+.cat-card {
+  background: var(--glass); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  backdrop-filter: blur(14px); padding: 28px 20px; text-align: center;
+  cursor: pointer; transition: all .3s var(--trans);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+}
+.cat-card:hover { transform: translateY(-4px); border-color: var(--border-hi); }
+.cat-motivation:hover { box-shadow: 0 8px 32px rgba(255,126,27,.25); border-color: var(--saffron); }
+.cat-stress:hover     { box-shadow: 0 8px 32px rgba(0,229,192,.2); border-color: var(--teal); }
+.cat-life:hover       { box-shadow: 0 8px 32px rgba(245,200,66,.2); border-color: var(--gold); }
+.cat-discipline:hover { box-shadow: 0 8px 32px rgba(168,85,247,.2); border-color: var(--purple); }
+
+.cat-icon { font-size: 2rem; }
+.cat-name { font-family: var(--font-display); font-weight: 700; font-size: 1rem; }
+.cat-desc { font-size: .78rem; color: var(--text-muted); }
+
+/* ===========================
+   SEARCH
+=========================== */
+.search-wrap { margin-bottom: 24px; }
+.search-box {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px; border-radius: var(--radius-xl);
+}
+.search-icon { font-size: 1.1rem; flex-shrink: 0; }
+#search-input {
+  flex: 1; background: none; border: none; outline: none;
+  color: var(--text); font-family: var(--font-body); font-size: .95rem;
+}
+#search-input::placeholder { color: var(--text-dim); }
+.search-clear {
+  background: none; border: none; color: var(--text-dim); cursor: pointer;
+  font-size: 1rem; padding: 4px; line-height: 1; opacity: 0; transition: opacity .2s;
+}
+.search-clear.visible { opacity: 1; }
+
+/* ===========================
+   FILTER PILLS
+=========================== */
+.filter-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+.pill {
+  background: var(--glass); border: 1px solid var(--border); border-radius: 50px;
+  padding: 8px 18px; font-size: .83rem; font-weight: 600; color: var(--text-muted);
+  cursor: pointer; transition: all .2s var(--trans); font-family: var(--font-display);
+}
+.pill:hover { border-color: var(--saffron); color: var(--text); }
+.pill.active { background: rgba(255,126,27,.15); border-color: var(--saffron); color: var(--saffron); }
+
+.results-count { font-size: .82rem; color: var(--text-dim); margin-bottom: 20px; }
+
+/* ===========================
+   SHLOKA GRID
+=========================== */
+.shloka-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+
+.shloka-card {
+  background: var(--glass); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  backdrop-filter: blur(16px); padding: 24px; cursor: pointer;
+  transition: all .3s var(--trans); position: relative; overflow: hidden;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.shloka-card::after {
+  content: ''; position: absolute; inset: 0; opacity: 0;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.04), transparent 60%);
+  transition: opacity .3s;
+}
+.shloka-card:hover::after { opacity: 1; }
+.shloka-card:hover { transform: translateY(-4px); border-color: var(--border-hi); box-shadow: 0 12px 40px rgba(0,0,0,.4); }
+
+.sc-header { display: flex; align-items: center; justify-content: space-between; }
+.sc-chapter {
+  font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--saffron);
+}
+.sc-cat-badge {
+  font-size: .7rem; font-weight: 600; border-radius: 50px; padding: 3px 10px;
+  border: 1px solid;
+}
+.cat-badge-Motivation { color: var(--saffron); border-color: rgba(255,126,27,.3); background: rgba(255,126,27,.1); }
+.cat-badge-Stress      { color: var(--teal);   border-color: rgba(0,229,192,.3);  background: rgba(0,229,192,.08); }
+.cat-badge-Life\ Lessons { color: var(--gold); border-color: rgba(245,200,66,.3); background: rgba(245,200,66,.08); }
+.cat-badge-Discipline  { color: var(--purple); border-color: rgba(168,85,247,.3); background: rgba(168,85,247,.1); }
+
+.sc-sanskrit {
+  font-family: var(--font-devan); font-size: .9rem; line-height: 1.7;
+  color: var(--gold); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.sc-english { font-size: .83rem; line-height: 1.6; color: var(--text-muted); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.sc-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 4px; }
+.sc-read-btn {
+  font-size: .78rem; font-weight: 700; color: var(--saffron); font-family: var(--font-display);
+  background: rgba(255,126,27,.1); border: 1px solid rgba(255,126,27,.2);
+  border-radius: 50px; padding: 5px 14px; transition: all .2s;
+}
+.shloka-card:hover .sc-read-btn { background: rgba(255,126,27,.2); }
+.sc-tags { display: flex; gap: 5px; flex-wrap: wrap; }
+.sc-tag { font-size: .68rem; color: var(--text-dim); background: rgba(255,255,255,.05); border-radius: 4px; padding: 2px 7px; }
+
+/* ===========================
+   DAILY FULL CARD
+=========================== */
+.daily-full-wrap { max-width: 760px; margin: 0 auto; }
+
+.daily-full-card {
+  padding: 40px 44px; border-radius: var(--radius-xl);
+  position: relative; overflow: hidden; margin-bottom: 24px;
+}
+.daily-full-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: var(--grad-main);
+}
+.dfc-nav {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px;
+}
+.dfc-nav-btn {
+  background: var(--glass); border: 1px solid var(--border); border-radius: 50px;
+  color: var(--text-muted); padding: 8px 18px; font-size: .83rem; font-weight: 600;
+  cursor: pointer; transition: all .2s; font-family: var(--font-display);
+}
+.dfc-nav-btn:hover { border-color: var(--saffron); color: var(--saffron); }
+.dfc-day { font-size: .78rem; color: var(--text-dim); }
+.dfc-chapter-label {
+  font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--saffron); margin-bottom: 16px;
+}
+.dfc-sanskrit {
+  font-family: var(--font-devan); font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  line-height: 1.9; color: var(--gold); margin-bottom: 8px;
+}
+.dfc-transliteration { font-size: .82rem; color: var(--text-dim); font-style: italic; margin-bottom: 20px; line-height: 1.6; }
+.dfc-divider { height: 1px; background: var(--border); margin: 20px 0; }
+.dfc-label { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px; }
+.dfc-english { font-size: .95rem; line-height: 1.75; color: var(--text-muted); margin-bottom: 20px; }
+.dfc-hinglish {
+  background: rgba(0,229,192,.06); border-left: 3px solid var(--teal);
+  border-radius: 0 10px 10px 0; padding: 14px 18px; font-size: .9rem;
+  line-height: 1.7; color: var(--text); margin-bottom: 28px;
+}
+.dfc-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* Focus Mode Btn */
+.btn-focus {
+  display: flex; align-items: center; gap: 7px;
+  background: rgba(245,200,66,.1); border: 1px solid rgba(245,200,66,.25);
+  border-radius: 50px; padding: 8px 18px; color: var(--gold); font-size: .83rem; font-weight: 600;
+  cursor: pointer; transition: all .2s; font-family: var(--font-display);
+}
+.btn-focus:hover { background: rgba(245,200,66,.2); }
+
+/* Share Btn */
+.btn-share {
+  display: flex; align-items: center; gap: 7px;
+  background: rgba(236,72,153,.1); border: 1px solid rgba(236,72,153,.25);
+  border-radius: 50px; padding: 8px 18px; color: var(--pink); font-size: .83rem; font-weight: 600;
+  cursor: pointer; transition: all .2s; font-family: var(--font-display);
+}
+.btn-share:hover { background: rgba(236,72,153,.2); }
+
+/* ===========================
+   MODAL
+=========================== */
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,.7); backdrop-filter: blur(8px);
+  z-index: 200; display: none; place-items: center; padding: 20px; overflow-y: auto;
+}
+.modal-overlay.open { display: grid; animation: fadeIn .25s var(--trans); }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.modal {
+  max-width: 680px; width: 100%; position: relative; padding: 40px;
+  animation: slideUp .3s var(--trans);
+  max-height: 90vh; overflow-y: auto;
+}
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+.modal-close {
+  position: sticky; top: 0; float: right; background: var(--glass-b); border: 1px solid var(--border);
+  border-radius: 50%; width: 32px; height: 32px; font-size: .9rem; cursor: pointer;
+  color: var(--text-muted); transition: all .2s; line-height: 32px; text-align: center;
+  display: block; margin-bottom: 8px; z-index: 1;
+}
+.modal-close:hover { color: var(--text); border-color: var(--border-hi); }
+
+/* ===========================
+   SHARE MODAL
+=========================== */
+.share-modal { max-width: 480px; }
+.share-preview {
+  background: linear-gradient(135deg, #0f1624, #1a0a2e);
+  border: 1px solid rgba(255,126,27,.3); border-radius: var(--radius-lg);
+  padding: 28px 24px; margin-bottom: 20px; text-align: center;
+}
+.share-preview .sp-brand {
+  font-family: var(--font-display); font-weight: 800; font-size: .75rem;
+  letter-spacing: .15em; color: var(--saffron); text-transform: uppercase; margin-bottom: 16px;
+}
+.share-preview .sp-sanskrit {
+  font-family: var(--font-devan); font-size: .95rem; line-height: 1.8; color: var(--gold); margin-bottom: 12px;
+}
+.share-preview .sp-english {
+  font-size: .8rem; line-height: 1.65; color: rgba(255,255,255,.6); margin-bottom: 10px;
+}
+.share-preview .sp-hinglish {
+  font-size: .82rem; color: var(--teal); border-top: 1px solid rgba(255,255,255,.08); padding-top: 10px;
+}
+.share-actions { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.share-note { font-size: .78rem; color: var(--text-dim); }
+
+/* ===========================
+   QUIZ
+=========================== */
+.quiz-wrap { max-width: 640px; margin: 0 auto; }
+
+.quiz-card {
+  background: var(--glass); border: 1px solid var(--border); border-radius: var(--radius-xl);
+  backdrop-filter: blur(16px); padding: 36px 40px; margin-bottom: 20px;
+}
+.quiz-progress { margin-bottom: 24px; }
+.qp-label { font-size: .75rem; color: var(--text-dim); margin-bottom: 8px; }
+.qp-bar { height: 4px; background: rgba(255,255,255,.08); border-radius: 2px; overflow: hidden; }
+.qp-fill { height: 100%; background: var(--grad-main); border-radius: 2px; transition: width .5s var(--trans); }
+
+.quiz-shloka {
+  font-family: var(--font-devan); font-size: 1rem; line-height: 1.8;
+  color: var(--gold); margin-bottom: 20px; padding: 16px 20px;
+  background: rgba(245,200,66,.05); border-radius: var(--radius); border: 1px solid rgba(245,200,66,.1);
+}
+.quiz-question { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; margin-bottom: 20px; }
+
+.quiz-options { display: flex; flex-direction: column; gap: 10px; }
+.quiz-opt {
+  background: var(--glass); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 14px 18px; font-size: .9rem; cursor: pointer; transition: all .2s var(--trans);
+  text-align: left; color: var(--text); display: flex; align-items: center; gap: 12px;
+}
+.quiz-opt:hover:not(:disabled) { border-color: var(--saffron); background: rgba(255,126,27,.07); transform: translateX(4px); }
+.quiz-opt.correct { border-color: var(--teal); background: rgba(0,229,192,.1); color: var(--teal); }
+.quiz-opt.wrong   { border-color: #ef4444; background: rgba(239,68,68,.08); color: #ef4444; }
+.quiz-opt:disabled { cursor: default; }
+.quiz-opt-letter {
+  width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,.06);
+  border: 1px solid var(--border); font-family: var(--font-display); font-weight: 700;
+  font-size: .8rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+
+.quiz-feedback { margin-top: 20px; padding: 16px 20px; border-radius: var(--radius); font-size: .9rem; }
+.quiz-feedback.correct { background: rgba(0,229,192,.1); border: 1px solid rgba(0,229,192,.2); color: var(--teal); }
+.quiz-feedback.wrong   { background: rgba(239,68,68,.08); border: 1px solid rgba(239,68,68,.2); color: #f87171; }
+
+.quiz-next-row { margin-top: 20px; display: flex; justify-content: flex-end; }
+
+.quiz-score-card {
+  text-align: center; padding: 48px 40px;
+}
+.qs-emoji { font-size: 4rem; margin-bottom: 16px; }
+.qs-title { font-family: var(--font-display); font-weight: 800; font-size: 2rem; margin-bottom: 8px; }
+.qs-score { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 28px; }
+.qs-big-score { font-family: var(--font-display); font-weight: 800; font-size: 4rem; color: var(--gold); display: block; }
+
+/* ===========================
+   FOCUS MODE
+=========================== */
+.focus-overlay {
+  position: fixed; inset: 0; background: rgba(3,5,10,.97);
+  z-index: 300; display: none; flex-direction: column; align-items: center; justify-content: center;
+  padding: 40px 24px;
+}
+.focus-overlay.open { display: flex; animation: fadeIn .35s var(--trans); }
+
+.focus-close {
+  position: fixed; top: 24px; right: 24px; background: rgba(255,255,255,.06);
+  border: 1px solid var(--border); border-radius: 50px; padding: 8px 18px;
+  color: var(--text-muted); cursor: pointer; font-family: var(--font-display); font-weight: 600; font-size: .83rem;
+  transition: all .2s;
+}
+.focus-close:hover { color: var(--text); border-color: var(--border-hi); }
+
+.focus-content { max-width: 640px; width: 100%; text-align: center; }
+.fc-label {
+  font-size: .7rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase;
+  color: var(--saffron); margin-bottom: 28px;
+}
+.fc-sanskrit {
+  font-family: var(--font-devan); font-size: clamp(1.2rem, 3vw, 1.6rem);
+  line-height: 2; color: var(--gold); margin-bottom: 24px;
+}
+.fc-english { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,.7); }
+
+/* ===========================
+   TOAST
+=========================== */
+.toast {
+  position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(100px);
+  background: rgba(20,25,40,.95); border: 1px solid var(--border-hi);
+  border-radius: 50px; padding: 12px 24px; font-size: .88rem; font-weight: 600;
+  backdrop-filter: blur(20px); z-index: 400; transition: transform .3s var(--trans), opacity .3s;
+  white-space: nowrap; pointer-events: none; opacity: 0;
+}
+.toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+/* ===========================
+   NO RESULTS
+=========================== */
+.no-results {
+  grid-column: 1/-1; text-align: center; padding: 60px 20px; color: var(--text-dim);
+}
+.no-results-emoji { font-size: 3rem; margin-bottom: 12px; }
+.no-results-text { font-size: 1rem; }
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+  .nav-links { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0;
+    background: rgba(5,8,16,.97); backdrop-filter: blur(20px);
+    flex-direction: column; padding: 20px; gap: 4px; border-bottom: 1px solid var(--border); }
+  .nav-links.open { display: flex; animation: fadeInUp .25s var(--trans); }
+  .hamburger { display: flex; }
+
+  .hero { padding: 40px 0 24px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-cta { gap: 10px; }
+
+  .daily-card { padding: 20px 20px; }
+  .daily-full-card { padding: 24px 20px; }
+  .quiz-card { padding: 24px 20px; }
+
+  .shloka-grid { grid-template-columns: 1fr; }
+  .category-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .modal { padding: 24px 20px; }
+  .main-wrap { padding-left: 16px; padding-right: 16px; }
+}
+
+@media (max-width: 420px) {
+  .category-grid { grid-template-columns: 1fr 1fr; }
+  .stat-row .stat-chip { font-size: .75rem; padding: 6px 12px; }
+}
+</style>
+</head>
+<body>
+
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+  </div>
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" onclick="showSection('home')">
+        <span class="logo-icon">☸</span>
+        <span class="logo-text">GitaVibes</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#" class="nav-link active" data-section="home" onclick="showSection('home')">Home</a></li>
+        <li><a href="#" class="nav-link" data-section="explore" onclick="showSection('explore')">Explore</a></li>
+        <li><a href="#" class="nav-link" data-section="daily" onclick="showSection('daily')">Daily</a></li>
+        <li><a href="#" class="nav-link" data-section="quiz" onclick="showSection('quiz')">Quiz</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="streak-badge" title="Your daily streak">
+          <span class="streak-fire">🔥</span>
+          <span class="streak-count" id="streak-count">0</span>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-wrap">
+
+    <section class="section active" id="section-home">
+      <div class="hero">
+        <div class="hero-badge fade-up">✨ Ancient Wisdom · Modern Vibes</div>
+        <h1 class="hero-title fade-up">
+          Life advice from<br />
+          <span class="gradient-text">3000 years ago</span><br />
+          that still hits.
+        </h1>
+        <p class="hero-sub fade-up">The Bhagavad Gita — but make it Gen Z. No cap, pure wisdom. 🙏</p>
+        <div class="hero-cta fade-up">
+          <button class="btn-primary" onclick="showSection('explore')">Explore Shlokas</button>
+          <button class="btn-ghost" onclick="showSection('daily')">Today's Shloka</button>
+        </div>
+        <div class="stat-row fade-up">
+          <div class="stat-chip">📖 18 Chapters</div>
+          <div class="stat-chip">⚡ 700 Verses</div>
+          <div class="stat-chip">🧠 Infinite Wisdom</div>
+        </div>
+      </div>
+
+      <div class="section-label fade-up">Today's Vibe Check ⬇</div>
+      <div id="home-daily-card" class="daily-card glass-card fade-up"></div>
+
+      <div class="section-label fade-up">Browse by Topic</div>
+      <div class="category-grid fade-up">
+        <button class="cat-card cat-motivation" onclick="filterCategory('Motivation')">
+          <span class="cat-icon">🔥</span>
+          <span class="cat-name">Motivation</span>
+          <span class="cat-desc">Get pumped up</span>
+        </button>
+        <button class="cat-card cat-stress" onclick="filterCategory('Stress')">
+          <span class="cat-icon">🧘</span>
+          <span class="cat-name">Stress</span>
+          <span class="cat-desc">Find your calm</span>
+        </button>
+        <button class="cat-card cat-life" onclick="filterCategory('Life Lessons')">
+          <span class="cat-icon">💡</span>
+          <span class="cat-name">Life Lessons</span>
+          <span class="cat-desc">Big brain energy</span>
+        </button>
+        <button class="cat-card cat-discipline" onclick="filterCategory('Discipline')">
+          <span class="cat-icon">⚔️</span>
+          <span class="cat-name">Discipline</span>
+          <span class="cat-desc">Stay on track</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section" id="section-explore">
+      <div class="section-header fade-up">
+        <h2 class="section-title">Shloka Library <span class="emoji-badge">📚</span></h2>
+        <p class="section-sub">All the wisdom, zero boring vibes.</p>
+      </div>
+      <div class="search-wrap fade-up">
+        <div class="search-box glass-card">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="search-input" placeholder="Search by keyword — 'anger', 'focus', 'karma'..." autocomplete="off" />
+          <button class="search-clear" id="search-clear" onclick="clearSearch()" aria-label="Clear search">✕</button>
+        </div>
+      </div>
+      <div class="filter-pills fade-up" id="filter-pills">
+        <button class="pill active" data-cat="All" onclick="filterCategory('All')">All</button>
+        <button class="pill" data-cat="Motivation" onclick="filterCategory('Motivation')">🔥 Motivation</button>
+        <button class="pill" data-cat="Stress" onclick="filterCategory('Stress')">🧘 Stress</button>
+        <button class="pill" data-cat="Life Lessons" onclick="filterCategory('Life Lessons')">💡 Life Lessons</button>
+        <button class="pill" data-cat="Discipline" onclick="filterCategory('Discipline')">⚔️ Discipline</button>
+      </div>
+      <div class="results-count fade-up" id="results-count"></div>
+      <div class="shloka-grid" id="shloka-grid"></div>
+    </section>
+
+    <section class="section" id="section-daily">
+      <div class="section-header fade-up">
+        <h2 class="section-title">Daily Shloka <span class="emoji-badge">⭐</span></h2>
+        <p class="section-sub">One verse a day keeps the existential crisis away.</p>
+      </div>
+      <div id="daily-full-card" class="daily-full-wrap fade-up"></div>
+    </section>
+
+    <section class="section" id="section-quiz">
+      <div class="section-header fade-up">
+        <h2 class="section-title">Quiz Mode <span class="emoji-badge">🎯</span></h2>
+        <p class="section-sub">Test your wisdom. No cheating bhai.</p>
+      </div>
+      <div class="quiz-wrap fade-up" id="quiz-wrap"></div>
+    </section>
+
+  </main>
+
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal()">
+    <div class="modal glass-card" id="modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="share-overlay" onclick="closeShare()">
+    <div class="modal share-modal glass-card" id="share-modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeShare()" aria-label="Close">✕</button>
+      <div class="share-preview" id="share-preview"></div>
+      <div class="share-actions">
+        <button class="btn-primary" onclick="copyShareText()">📋 Copy Text</button>
+        <span class="share-note">Screenshot & share on your stories! 📸</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <div class="focus-overlay" id="focus-overlay">
+    <button class="focus-close" onclick="closeFocusMode()" aria-label="Exit focus mode">✕ Exit Focus</button>
+    <div class="focus-content" id="focus-content"></div>
+  </div>
+
+  <script>
+  // ---- EMBEDDED DATA ----
+  const SHLOKAS_DATA = [
+  {
+    "id": 1,
+    "chapter": 2,
+    "verse": 47,
+    "sanskrit": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।\nमा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥",
+    "transliteration": "Karmanye vadhikaraste Ma Phaleshu Kadachana,\nMa Karmaphalaheturbhurma Te Sangostvakarmani",
+    "english": "You have the right to perform your duties, but you are not entitled to the fruits of your actions. Never consider yourself the cause of the results of your activities, and never be attached to not doing your duty.",
+    "hinglish": "Bhai, apna kaam karo puri dedication se, lekin result ka tension mat lo. Jo hoga, achha hoga. Bas karte raho — yahi life ka real game hai! 🔥",
+    "category": "Motivation",
+    "tags": ["karma", "duty", "action", "result", "work"],
+    "quiz": {
+      "question": "What does this shloka say about the fruits of your actions?",
+      "options": [
+        "You should always focus on results",
+        "You have no right to perform duties",
+        "You have no right to the fruits of your actions",
+        "Fruits are more important than actions"
+      ],
+      "answer": 2
+    }
+  },
+  {
+    "id": 2,
+    "chapter": 2,
+    "verse": 14,
+    "sanskrit": "मात्रास्पर्शास्तु कौन्तेय शीतोष्णसुखदुःखदाः।\nआगमापायिनोऽनित्यास्तांस्तितिक्षस्व भारत॥",
+    "transliteration": "Maatraasparshaastu Kaunteya Sheetoshnasukhaduhkhadaah,\nAagamaapayino'nityaastaamstitikshasva Bhaarata",
+    "english": "O son of Kunti, the contact between the senses and the sense objects gives rise to fleeting perceptions of happiness and distress. These are non-permanent, and come and go like winter and summer seasons. O descendent of Bharata, one must learn to tolerate them without being disturbed.",
+    "hinglish": "Yaar, yeh jo sukh-dukh hain, yeh toh bass aate-jaate rehte hain jaise mausam. Kabhi garam, kabhi thanda. Chill maar, sab theek ho jaayega. Don't let it hit different! 😎",
+    "category": "Stress",
+    "tags": ["stress", "happiness", "sadness", "temporary", "peace"],
+    "quiz": {
+      "question": "According to this shloka, happiness and sorrow are:",
+      "options": [
+        "Permanent states of life",
+        "Temporary and fleeting",
+        "Only caused by others",
+        "Signs of weakness"
+      ],
+      "answer": 1
+    }
+  },
+  {
+    "id": 3,
+    "chapter": 6,
+    "verse": 5,
+    "sanskrit": "उद्धरेदात्मनात्मानं नात्मानमवसादयेत्।\nआत्मैव ह्यात्मनो बन्धुरात्मैव रिपुरात्मनः॥",
+    "transliteration": "Uddhared aatmanaatmaanam naatmaanamavasaadayet,\nAtmaiva hyaatmano bandhur aatmaiva ripur aatmanah",
+    "english": "One must elevate oneself by one's own mind, and not degrade oneself. The mind is the friend of the conditioned soul, and the mind is also the enemy.",
+    "hinglish": "Tu hi apna dost hai, tu hi apna dushman. Teri mindset hi teri sabse badi power hai. Khud ko lift karo bhai, koi aur nahi karega. Self-belief is everything! 💪",
+    "category": "Motivation",
+    "tags": ["self", "mind", "friend", "enemy", "self-improvement"],
+    "quiz": {
+      "question": "Who is your best friend and worst enemy according to this shloka?",
+      "options": [
+        "Your family",
+        "Your colleagues",
+        "Your own mind",
+        "Society"
+      ],
+      "answer": 2
+    }
+  },
+  {
+    "id": 4,
+    "chapter": 2,
+    "verse": 20,
+    "sanskrit": "न जायते म्रियते वा कदाचिन्नायं भूत्वा भविता वा न भूयः।\nअजो नित्यः शाश्वतोऽयं पुराणो न हन्यते हन्यमाने शरीरे॥",
+    "transliteration": "Na jaayate mriyate vaa kadaachin naayam bhootvaa bhavitaa vaa na bhooyah,\nAjo nityah shaashvato'yam puraano na hanyate hanyamaane shareere",
+    "english": "The soul is never born nor dies at any time. It has not come into being, does not come into being, and will not come into being. It is unborn, eternal, ever-existing, and primeval. It is not slain when the body is slain.",
+    "hinglish": "Bhai, asli wala 'tu' toh kabhi marega hi nahi. Body toh bas ek dress hai — change hoti rehti hai. Soul is eternal yaar, isse koi nahi touch kar sakta. Big facts! ✨",
+    "category": "Life Lessons",
+    "tags": ["soul", "eternal", "death", "body", "immortal"],
+    "quiz": {
+      "question": "What does Krishna say about the soul in this verse?",
+      "options": [
+        "The soul dies with the body",
+        "The soul is eternal and never born or dies",
+        "The soul is reborn immediately",
+        "The soul belongs to God only"
+      ],
+      "answer": 1
+    }
+  },
+  {
+    "id": 5,
+    "chapter": 3,
+    "verse": 21,
+    "sanskrit": "यद्यदाचरति श्रेष्ठस्तत्तदेवेतरो जनः।\nस यत्प्रमाणं कुरुते लोकस्तदनुवर्तते॥",
+    "transliteration": "Yadyadaacharati shreshthas tattadevetaro janah,\nSa yatpramanam kurute lokastadanuvartate",
+    "english": "Whatever actions a great person performs, common people follow. And whatever standards they set by exemplary acts, all the world pursues.",
+    "hinglish": "Jab bade log kuch karte hain, toh baaki sab unhe follow karte hain. Toh bhai, tu bhi apne actions pe dhyan de — log dekh rahe hain. Be the example! 🌟",
+    "category": "Life Lessons",
+    "tags": ["leadership", "example", "influence", "role model", "society"],
+    "quiz": {
+      "question": "This shloka teaches us about the importance of:",
+      "options": [
+        "Following others blindly",
+        "Being a good leader and role model",
+        "Ignoring what others do",
+        "Competing with everyone"
+      ],
+      "answer": 1
+    }
+  },
+  {
+    "id": 6,
+    "chapter": 16,
+    "verse": 21,
+    "sanskrit": "त्रिविधं नरकस्येदं द्वारं नाशनमात्मनः।\nकामः क्रोधस्तथा लोभस्तस्मादेतत्त्रयं त्यजेत्॥",
+    "transliteration": "Trividham narakasyedam dvaaram naashanam aatmanah,\nKaamah krodhas tathaa lobhas tasmad etat trayam tyajet",
+    "english": "There are three gates to self-destructive hell: lust, anger, and greed. Therefore, one must abandon all three.",
+    "hinglish": "Yaar, teen cheezein hain jo life barbad karti hain — kaam-vasna, gussa, aur lalach. Ye tino tere worst enemies hain. Inse dur reh, life set ho jaayegi! 🚫",
+    "category": "Discipline",
+    "tags": ["anger", "greed", "lust", "self-control", "discipline"],
+    "quiz": {
+      "question": "What are the three gates to self-destruction mentioned in this shloka?",
+      "options": [
+        "Pride, jealousy, and hatred",
+        "Lust, anger, and greed",
+        "Laziness, doubt, and fear",
+        "Ego, lies, and violence"
+      ],
+      "answer": 1
+    }
+  },
+  {
+    "id": 7,
+    "chapter": 2,
+    "verse": 62,
+    "sanskrit": "ध्यायतो विषयान्पुंसः सङ्गस्तेषूपजायते।\nसङ्गात्सञ्जायते कामः कामात्क्रोधोऽभिजायते॥",
+    "transliteration": "Dhyaayato vishayaan pumsah sangas teshupajaayate,\nSangaat sanjaayate kaamah kaamaat krodho'bhi jaayate",
+    "english": "While contemplating the objects of the senses, a person develops attachment for them, and from such attachment lust develops, and from lust anger arises.",
+    "hinglish": "Yaar, jab tu kisi cheez ke baare mein zyada sochta rehta hai, toh attachment ho jaati hai. Attachment se desire, desire se frustration, frustration se anger. Social media doom scrolling bilkul yahi hai! 📱",
+    "category": "Stress",
+    "tags": ["anger", "attachment", "desire", "focus", "mind"],
+    "quiz": {
+      "question": "What leads to anger according to this shloka?",
+      "options": [
+        "Hard work and dedication",
+        "Contemplation → Attachment → Desire → Anger",
+        "Reading too many books",
+        "Spending time with friends"
+      ],
+      "answer": 1
+    }
+  },
+  {
+    "id": 8,
+    "chapter": 4,
+    "verse": 7,
+    "sanskrit": "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत।\nअभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम्॥",
+    "transliteration": "Yadaa yadaa hi dharmasya glaanir bhavati bhaarat,\nAbhyutthanam adharmasya tadaatmaanam srijaamyaham",
+    "english": "Whenever there is a decline in righteousness and an increase in unrighteousness, O Arjuna, at that time I manifest myself on earth.",
+    "hinglish": "Jab bhi duniya mein burai badhti hai aur achhai khatam hoti lagti hai — tab God himself step in karta hai. System corrupt ho toh reset aata hai. Trust the process! ⚡",
+    "category": "Life Lessons",
+    "tags": ["dharma", "god", "righteousness", "divine", "faith"],
+    "quiz": {
+      "question": "When does Krishna say he manifests on Earth?",
+      "options": [
+        "Every century",
+        "When people pray enough",
+        "When righteousness declines and evil rises",
+        "Only in Dvapara Yuga"
+      ],
+      "answer": 2
+    }
+  },
+  {
+    "id": 9,
+    "chapter": 18,
+    "verse": 66,
+    "sanskrit": "सर्वधर्मान्परित्यज्य मामेकं शरणं व्रज।\nअहं त्वा सर्वपापेभ्यो मोक्षयिष्यामि मा शुचः॥",
+    "transliteration": "Sarva-dharmaan parityajya maam ekam sharanam vraja,\nAham tvaa sarva-paapebhyo mokshayishyaami maa shuchah",
+    "english": "Abandon all varieties of religion and just surrender unto Me. I shall deliver you from all sinful reactions. Do not fear.",
+    "hinglish": "Sab theories, sab ego, sab calculations chod de — bas surrender kar aur trust kar. Tab God personally handle karega tera saara mess. No stress, no fear! 🙏",
+    "category": "Stress",
+    "tags": ["surrender", "faith", "fear", "trust", "peace"],
+    "quiz": {
+      "question": "What promise does Krishna make in this final verse?",
+      "options": [
+        "He will grant material wealth",
+        "He will deliver us from all sins if we surrender to him",
+        "He will make us invincible",
+        "He will remove all obstacles"
+      ],
+      "answer": 1
+    }
+  },
+  {
+    "id": 10,
+    "chapter": 6,
+    "verse": 35,
+    "sanskrit": "श्रीभगवानुवाच असंशयं महाबाहो मनो दुर्निग्रहं चलम्।\nअभ्यासेन तु कौन्तेय वैराग्येण च गृह्यते॥",
+    "transliteration": "Asanshayam mahaabaaho mano durnigraham chalam,\nAbhyaasena tu kaunteya vairaagyena cha grihyate",
+    "english": "Lord Krishna said: O mighty-armed son of Kunti, what you say is correct; the mind is indeed very difficult to restrain. But by practice and detachment, it can be controlled.",
+    "hinglish": "Haan yaar, mind control karna mushkil hai — yeh toh sachchi baat hai. Lekin bhai, practice aur detachment se ho jaata hai. Gym jaisi cheez hai — roz karo, results milenge! 🧠💪",
+    "category": "Discipline",
+    "tags": ["mind", "focus", "practice", "discipline", "control"],
+    "quiz": {
+      "question": "How can the restless mind be controlled according to Krishna?",
+      "options": [
+        "By sleeping more",
+        "By avoiding all work",
+        "Through practice and detachment",
+        "By meditation alone"
+      ],
+      "answer": 2
+    }
+  },
+  {
+    "id": 11,
+    "chapter": 2,
+    "verse": 3,
+    "sanskrit": "क्लैब्यं मा स्म गमः पार्थ नैतत्त्वय्युपपद्यते।\nक्षुद्रं हृदयदौर्बल्यं त्यक्त्वोत्तिष्ठ परन्तप॥",
+    "transliteration": "Klaibyam maa sma gamah paartha naitat tvayyupapadyate,\nKshudram hridayadaurbalyam tyaktvo ttishtha parantapa",
+    "english": "O Partha, do not yield to this degrading impotence. It does not become you. Give up such petty weakness of heart and arise, O scorcher of enemies.",
+    "hinglish": "Arjun ko Krishna ne literally bola — yaar, yeh weakness suit nahi karti tujhe. Uth! Weak mat ban. Tu capable hai — toh act kar uski tarah. Wake up bhai! 🔥",
+    "category": "Motivation",
+    "tags": ["courage", "strength", "weakness", "arise", "action"],
+    "quiz": {
+      "question": "What is Krishna asking Arjuna to do in this verse?",
+      "options": [
+        "Retreat from the battle",
+        "Pray and meditate",
+        "Overcome weakness and rise up",
+        "Surrender to the enemy"
+      ],
+      "answer": 2
+    }
+  },
+  {
+    "id": 12,
+    "chapter": 4,
+    "verse": 38,
+    "sanskrit": "न हि ज्ञानेन सदृशं पवित्रमिह विद्यते।\nतत्स्वयं योगसंसिद्धः कालेनात्मनि विन्दति॥",
+    "transliteration": "Na hi jnaanena sadrisham pavitram iha vidyate,\nTat svayam yoga-samsiddhah kaale naatmani vindati",
+    "english": "In this world, there is nothing so sublime and pure as transcendental knowledge. Such knowledge is the mature fruit of all mysticism. And one who has achieved this enjoys the self within himself in due course of time.",
+    "hinglish": "Yaar, knowledge se badi koi cheez nahi. Padhna, seekhna, grow karna — yahi sabse bada flex hai. Time ke saath sab pata chalta hai. Stay curious! 📚✨",
+    "category": "Life Lessons",
+    "tags": ["knowledge", "wisdom", "learning", "growth", "education"],
+    "quiz": {
+      "question": "What does Krishna consider the most pure and sublime thing in this world?",
+      "options": [
+        "Gold and wealth",
+        "Devotion alone",
+        "Transcendental knowledge",
+        "Physical strength"
+      ],
+      "answer": 2
+    }
+  }
+]
+;
+
+  // ---- APP JS ----
+  /**
+ * GitaVibes — app.js
+ * Ancient Wisdom · Gen Z Energy
+ * ================================
+ * Handles: data loading, routing, search, quiz, audio, streaks, particles
+ */
+
+'use strict';
+
+/* ============================================================
+   STATE
+============================================================ */
+let shlokas       = [];   // all shlokas from data.json
+let filtered      = [];   // current filter/search results
+let currentCat    = 'All';
+let searchQuery   = '';
+let dailyIndex    = 0;    // index used for "daily" shloka
+let dailyBrowse   = 0;    // index for nav in daily section
+
+// Quiz state
+let quizQueue     = [];
+let quizCurrent   = 0;
+let quizScore     = 0;
+let quizAnswered  = false;
+
+// Streak
+let streakKey = 'gitavibes_streak';
+let lastVisitKey = 'gitavibes_lastvisit';
+
+/* ============================================================
+   INIT
+============================================================ */
+document.addEventListener('DOMContentLoaded', async () => {
+  await loadData();
+  initStreak();
+  initParticles();
+  initNavbar();
+  initSearch();
+  renderHomeDaily();
+  renderExplore();
+  observeFadeUps();
+  showSection('home');
+  initHamburger();
+});
+
+/* ============================================================
+   DATA LOADING
+============================================================ */
+async function loadData() {
+  shlokas = SHLOKAS_DATA;
+  filtered = [...shlokas];
+  const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
+  dailyIndex = dayOfYear % shlokas.length;
+  dailyBrowse = dailyIndex;
+}
+
+/* ============================================================
+   STREAK
+============================================================ */
+function initStreak() {
+  const today = new Date().toDateString();
+  const lastVisit = localStorage.getItem(lastVisitKey);
+  let streak = parseInt(localStorage.getItem(streakKey) || '0');
+
+  if (lastVisit === today) {
+    // same day, no change
+  } else if (lastVisit === new Date(Date.now() - 86400000).toDateString()) {
+    // consecutive day
+    streak++;
+    localStorage.setItem(streakKey, streak);
+    localStorage.setItem(lastVisitKey, today);
+  } else {
+    // streak broken or first time
+    streak = 1;
+    localStorage.setItem(streakKey, streak);
+    localStorage.setItem(lastVisitKey, today);
+  }
+  document.getElementById('streak-count').textContent = streak;
+}
+
+/* ============================================================
+   SECTION ROUTING
+============================================================ */
+function showSection(name) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(l => {
+    l.classList.toggle('active', l.dataset.section === name);
+  });
+
+  const el = document.getElementById(`section-${name}`);
+  if (el) el.classList.add('active');
+
+  // Close hamburger
+  document.getElementById('nav-links').classList.remove('open');
+
+  // Section-specific init
+  if (name === 'daily') renderDailySection();
+  if (name === 'quiz')  initQuiz();
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  setTimeout(observeFadeUps, 60);
+}
+
+/* ============================================================
+   NAVBAR SCROLL EFFECT
+============================================================ */
+function initNavbar() {
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+}
+
+function initHamburger() {
+  const btn = document.getElementById('hamburger');
+  const links = document.getElementById('nav-links');
+  btn.addEventListener('click', () => links.classList.toggle('open'));
+}
+
+/* ============================================================
+   HOME — DAILY CARD
+============================================================ */
+function renderHomeDaily() {
+  const container = document.getElementById('home-daily-card');
+  if (!shlokas.length) return;
+  const s = shlokas[dailyIndex];
+  container.innerHTML = buildDailyCardHTML(s, true);
+}
+
+function buildDailyCardHTML(s, compact = false) {
+  return `
+    <div class="dc-chapter">Chapter ${s.chapter} · Verse ${s.verse} · ${s.category}</div>
+    <div class="dc-sanskrit">${s.sanskrit.replace(/\n/g, '<br/>')}</div>
+    <div class="dc-english">${s.english}</div>
+    <div class="dc-hinglish">${s.hinglish}</div>
+    <div class="dc-actions">
+      <button class="audio-btn" onclick="playAudio(${s.id}, this)" aria-label="Play shloka">
+        <span class="audio-icon">▶</span> Listen
+      </button>
+      <button class="btn-focus btn-sm" onclick="openFocusMode(${s.id})" aria-label="Focus mode">
+        🧘 Focus
+      </button>
+      <button class="btn-share btn-sm" onclick="openShare(${s.id})" aria-label="Share shloka">
+        📸 Share
+      </button>
+      ${compact ? `<button class="btn-ghost btn-sm" onclick="showSection('daily')" style="margin-left:auto">See Full →</button>` : ''}
+    </div>
+  `;
+}
+
+/* ============================================================
+   DAILY SECTION — Full card with navigation
+============================================================ */
+function renderDailySection() {
+  const container = document.getElementById('daily-full-card');
+  const s = shlokas[dailyBrowse];
+  if (!s) return;
+
+  container.innerHTML = `
+    <div class="daily-full-card glass-card">
+      <div class="dfc-nav">
+        <button class="dfc-nav-btn" onclick="navDaily(-1)">← Prev</button>
+        <span class="dfc-day">${dailyBrowse + 1} / ${shlokas.length}</span>
+        <button class="dfc-nav-btn" onclick="navDaily(1)">Next →</button>
+      </div>
+
+      <div class="dfc-chapter-label">Chapter ${s.chapter} · Verse ${s.verse} · ${s.category}</div>
+
+      <div class="dfc-sanskrit">${s.sanskrit.replace(/\n/g, '<br/>')}</div>
+      <div class="dfc-transliteration">${s.transliteration.replace(/\n/g, '<br/>')}</div>
+
+      <div class="dfc-divider"></div>
+
+      <div class="dfc-label">English Meaning</div>
+      <div class="dfc-english">${s.english}</div>
+
+      <div class="dfc-label">Hinglish Vibe 😎</div>
+      <div class="dfc-hinglish">${s.hinglish}</div>
+
+      <div class="dfc-actions">
+        <button class="audio-btn" onclick="playAudio(${s.id}, this)">
+          <span class="audio-icon">▶</span> Listen
+        </button>
+        <button class="btn-focus" onclick="openFocusMode(${s.id})">🧘 Focus Mode</button>
+        <button class="btn-share" onclick="openShare(${s.id})">📸 Share</button>
+        <button class="btn-primary btn-sm" onclick="openModal(${s.id})" style="margin-left:auto">Read Full →</button>
+      </div>
+    </div>
+  `;
+}
+
+function navDaily(dir) {
+  dailyBrowse = (dailyBrowse + dir + shlokas.length) % shlokas.length;
+  renderDailySection();
+}
+
+/* ============================================================
+   EXPLORE — Shloka Grid
+============================================================ */
+function renderExplore() {
+  applyFilters();
+}
+
+function applyFilters() {
+  const q = searchQuery.toLowerCase().trim();
+  filtered = shlokas.filter(s => {
+    const matchCat = currentCat === 'All' || s.category === currentCat;
+    const matchQ   = !q || [s.sanskrit, s.english, s.hinglish, ...(s.tags || [])].some(t => t.toLowerCase().includes(q));
+    return matchCat && matchQ;
+  });
+
+  renderGrid();
+  document.getElementById('results-count').textContent =
+    filtered.length === shlokas.length
+      ? `Showing all ${shlokas.length} shlokas`
+      : `${filtered.length} shloka${filtered.length !== 1 ? 's' : ''} found`;
+}
+
+function renderGrid() {
+  const grid = document.getElementById('shloka-grid');
+  if (!filtered.length) {
+    grid.innerHTML = `
+      <div class="no-results">
+        <div class="no-results-emoji">🔭</div>
+        <div class="no-results-text">No shlokas found. Try a different keyword!</div>
+      </div>`;
+    return;
+  }
+
+  grid.innerHTML = filtered.map((s, i) => `
+    <div class="shloka-card" onclick="openModal(${s.id})"
+         style="animation-delay: ${i * 0.05}s"
+         onmousemove="cardTilt(event, this)"
+         onmouseleave="cardReset(this)">
+      <div class="sc-header">
+        <div class="sc-chapter">Ch ${s.chapter} · V ${s.verse}</div>
+        <span class="sc-cat-badge cat-badge-${s.category}">${s.category}</span>
+      </div>
+      <div class="sc-sanskrit">${s.sanskrit.split('\n')[0]}</div>
+      <div class="sc-english">${s.english}</div>
+      <div class="sc-tags">${(s.tags || []).slice(0, 3).map(t => `<span class="sc-tag">#${t}</span>`).join('')}</div>
+      <div class="sc-footer">
+        <span class="sc-read-btn">Read More →</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+/* Card 3D tilt on hover */
+function cardTilt(e, el) {
+  const rect = el.getBoundingClientRect();
+  const x = ((e.clientX - rect.left) / rect.width) * 100;
+  const y = ((e.clientY - rect.top) / rect.height) * 100;
+  el.style.setProperty('--mx', x + '%');
+  el.style.setProperty('--my', y + '%');
+  const rotX = ((e.clientY - rect.top) / rect.height - .5) * -6;
+  const rotY = ((e.clientX - rect.left) / rect.width - .5) * 6;
+  el.style.transform = `translateY(-4px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+}
+function cardReset(el) {
+  el.style.transform = '';
+}
+
+/* ============================================================
+   SEARCH
+============================================================ */
+function initSearch() {
+  const input  = document.getElementById('search-input');
+  const clear  = document.getElementById('search-clear');
+
+  input.addEventListener('input', () => {
+    searchQuery = input.value;
+    clear.classList.toggle('visible', searchQuery.length > 0);
+    applyFilters();
+  });
+}
+
+function clearSearch() {
+  const input = document.getElementById('search-input');
+  const clear = document.getElementById('search-clear');
+  input.value = '';
+  searchQuery = '';
+  clear.classList.remove('visible');
+  applyFilters();
+}
+
+function filterCategory(cat) {
+  currentCat = cat;
+  // Update pills
+  document.querySelectorAll('.pill').forEach(p => {
+    p.classList.toggle('active', p.dataset.cat === cat);
+  });
+  applyFilters();
+  // Switch to explore section if not already there
+  if (!document.getElementById('section-explore').classList.contains('active')) {
+    showSection('explore');
+  }
+}
+
+/* ============================================================
+   MODAL — Full shloka detail
+============================================================ */
+function openModal(id) {
+  const s = shlokas.find(x => x.id === id);
+  if (!s) return;
+
+  document.getElementById('modal-body').innerHTML = `
+    <div class="dfc-chapter-label" style="margin-bottom:12px">Chapter ${s.chapter} · Verse ${s.verse} · <span style="color:var(--saffron)">${s.category}</span></div>
+
+    <div class="dfc-sanskrit" style="margin-bottom:8px">${s.sanskrit.replace(/\n/g, '<br/>')}</div>
+    <div class="dfc-transliteration" style="margin-bottom:20px">${s.transliteration.replace(/\n/g, '<br/>')}</div>
+
+    <div class="dfc-divider"></div>
+
+    <div class="dfc-label">English Meaning</div>
+    <div class="dfc-english">${s.english}</div>
+
+    <div class="dfc-label">Hinglish Vibe 😎</div>
+    <div class="dfc-hinglish">${s.hinglish}</div>
+
+    <div class="dfc-label">Tags</div>
+    <div class="sc-tags" style="margin-bottom:24px">${(s.tags || []).map(t => `<span class="sc-tag">#${t}</span>`).join('')}</div>
+
+    <div class="dfc-actions">
+      <button class="audio-btn" onclick="playAudio(${s.id}, this)">
+        <span class="audio-icon">▶</span> Listen
+      </button>
+      <button class="btn-focus" onclick="closeThen(() => openFocusMode(${s.id}))">🧘 Focus</button>
+      <button class="btn-share" onclick="closeThen(() => openShare(${s.id}))">📸 Share</button>
+    </div>
+  `;
+
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeThen(fn) { closeModal(); setTimeout(fn, 200); }
+
+/* ============================================================
+   AUDIO FEATURE (placeholder using SpeechSynthesis)
+============================================================ */
+let audioPlaying = false;
+let speechUtt = null;
+
+function playAudio(id, btn) {
+  const s = shlokas.find(x => x.id === id);
+  if (!s) return;
+
+  // Cancel existing
+  if (speechUtt) {
+    window.speechSynthesis.cancel();
+    document.querySelectorAll('.audio-btn').forEach(b => {
+      b.classList.remove('playing');
+      b.querySelector('.audio-icon').textContent = '▶';
+    });
+    if (audioPlaying) { audioPlaying = false; return; }
+  }
+
+  // Try speech synthesis
+  if ('speechSynthesis' in window) {
+    speechUtt = new SpeechSynthesisUtterance(s.transliteration);
+    speechUtt.lang = 'hi-IN';
+    speechUtt.rate = 0.75;
+    speechUtt.pitch = 1;
+
+    btn.classList.add('playing');
+    btn.querySelector('.audio-icon').textContent = '⏸';
+    audioPlaying = true;
+
+    speechUtt.onend = () => {
+      btn.classList.remove('playing');
+      btn.querySelector('.audio-icon').textContent = '▶';
+      audioPlaying = false;
+      speechUtt = null;
+    };
+
+    window.speechSynthesis.speak(speechUtt);
+    showToast('🎵 Playing shloka pronunciation...');
+  } else {
+    showToast('🔇 Audio not supported in this browser');
+  }
+}
+
+/* ============================================================
+   FOCUS MODE
+============================================================ */
+function openFocusMode(id) {
+  const s = shlokas.find(x => x.id === id);
+  if (!s) return;
+
+  document.getElementById('focus-content').innerHTML = `
+    <div class="fc-label">Chapter ${s.chapter} · Verse ${s.verse}</div>
+    <div class="fc-sanskrit">${s.sanskrit.replace(/\n/g, '<br/>')}</div>
+    <div class="dfc-divider" style="margin:24px auto;max-width:200px"></div>
+    <div class="fc-english">${s.english}</div>
+  `;
+
+  document.getElementById('focus-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeFocusMode() {
+  document.getElementById('focus-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* ============================================================
+   SHARE CARD
+============================================================ */
+function openShare(id) {
+  const s = shlokas.find(x => x.id === id);
+  if (!s) return;
+
+  document.getElementById('share-preview').innerHTML = `
+    <div class="sp-brand">☸ GitaVibes · Ch ${s.chapter}.${s.verse}</div>
+    <div class="sp-sanskrit">${s.sanskrit.replace(/\n/g, '<br/>')}</div>
+    <div class="sp-english">${s.english}</div>
+    <div class="sp-hinglish">${s.hinglish}</div>
+  `;
+
+  document.getElementById('share-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  // Store for copy
+  document.getElementById('share-overlay').dataset.copyText =
+    `☸ GitaVibes | Bhagavad Gita Ch ${s.chapter}.${s.verse}\n\n${s.sanskrit}\n\n${s.english}\n\n${s.hinglish}\n\n#GitaVibes #BhagavadGita #AncientWisdom`;
+}
+
+function closeShare() {
+  document.getElementById('share-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function copyShareText() {
+  const text = document.getElementById('share-overlay').dataset.copyText || '';
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(() => showToast('📋 Copied to clipboard!'));
+  } else {
+    showToast('✅ Text ready to share!');
+  }
+}
+
+/* ============================================================
+   QUIZ
+============================================================ */
+function initQuiz() {
+  quizScore = 0;
+  quizCurrent = 0;
+  quizAnswered = false;
+  // Shuffle shlokas for quiz
+  quizQueue = [...shlokas].sort(() => Math.random() - .5).slice(0, 5);
+  renderQuiz();
+}
+
+function renderQuiz() {
+  const wrap = document.getElementById('quiz-wrap');
+
+  if (quizCurrent >= quizQueue.length) {
+    renderQuizScore(wrap);
+    return;
+  }
+
+  const s = quizQueue[quizCurrent];
+  const q = s.quiz;
+  const pct = (quizCurrent / quizQueue.length) * 100;
+  const letters = ['A', 'B', 'C', 'D'];
+
+  wrap.innerHTML = `
+    <div class="quiz-card glass-card">
+      <div class="quiz-progress">
+        <div class="qp-label">Question ${quizCurrent + 1} of ${quizQueue.length}</div>
+        <div class="qp-bar"><div class="qp-fill" style="width:${pct}%"></div></div>
+      </div>
+
+      <div class="quiz-shloka">${s.sanskrit.split('\n')[0]}...</div>
+      <div class="quiz-question">${q.question}</div>
+
+      <div class="quiz-options" id="quiz-opts">
+        ${q.options.map((opt, i) => `
+          <button class="quiz-opt" onclick="answerQuiz(${i}, ${q.answer})" id="opt-${i}">
+            <span class="quiz-opt-letter">${letters[i]}</span>
+            ${opt}
+          </button>
+        `).join('')}
+      </div>
+
+      <div id="quiz-feedback"></div>
+
+      <div class="quiz-next-row" id="quiz-next-row" style="display:none">
+        <button class="btn-primary" onclick="nextQuestion()">
+          ${quizCurrent + 1 < quizQueue.length ? 'Next Question →' : 'See Score 🎉'}
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+function answerQuiz(chosen, correct) {
+  if (quizAnswered) return;
+  quizAnswered = true;
+
+  const opts = document.querySelectorAll('.quiz-opt');
+  opts.forEach(o => o.disabled = true);
+
+  opts[correct].classList.add('correct');
+  if (chosen !== correct) {
+    opts[chosen].classList.add('wrong');
+  } else {
+    quizScore++;
+  }
+
+  const feedback = document.getElementById('quiz-feedback');
+  feedback.className = 'quiz-feedback ' + (chosen === correct ? 'correct' : 'wrong');
+  feedback.textContent = chosen === correct
+    ? '✅ Sahi jawab bhai! Ekdum solid! 🔥'
+    : `❌ Galat! Correct answer tha: "${quizQueue[quizCurrent].quiz.options[correct]}"`;
+
+  document.getElementById('quiz-next-row').style.display = 'flex';
+}
+
+function nextQuestion() {
+  quizCurrent++;
+  quizAnswered = false;
+  renderQuiz();
+}
+
+function renderQuizScore(wrap) {
+  const total = quizQueue.length;
+  const pct   = Math.round((quizScore / total) * 100);
+  let emoji = '😅', msg = 'Keep learning!';
+  if (pct >= 80) { emoji = '🏆'; msg = 'Gyaan ka sagar! Absolutely crushing it!'; }
+  else if (pct >= 60) { emoji = '🔥'; msg = 'Solid bhai! Teri wisdom grow ho rahi hai!'; }
+  else if (pct >= 40) { emoji = '📚'; msg = 'Not bad! Keep reading those shlokas!'; }
+
+  wrap.innerHTML = `
+    <div class="quiz-score-card glass-card">
+      <div class="qs-emoji">${emoji}</div>
+      <div class="qs-title">${msg}</div>
+      <div class="qs-score">
+        You scored <span class="qs-big-score">${quizScore}/${total}</span>
+        (${pct}%)
+      </div>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <button class="btn-primary" onclick="initQuiz()">🔄 Try Again</button>
+        <button class="btn-ghost" onclick="showSection('explore')">📚 Read More</button>
+      </div>
+    </div>
+  `;
+}
+
+/* ============================================================
+   TOAST NOTIFICATIONS
+============================================================ */
+let toastTimer;
+function showToast(msg, dur = 2800) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), dur);
+}
+
+/* ============================================================
+   SCROLL FADE-UP OBSERVER
+============================================================ */
+function observeFadeUps() {
+  const els = document.querySelectorAll('.fade-up:not(.visible)');
+  if (!els.length) return;
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(el => io.observe(el));
+}
+
+/* ============================================================
+   PARTICLE CANVAS
+============================================================ */
+function initParticles() {
+  const canvas = document.getElementById('particles-canvas');
+  const ctx    = canvas.getContext('2d');
+  let W, H, particles = [];
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
+
+  const COLORS = ['#ff7e1b', '#f5c842', '#00e5c0', '#a855f7', '#38bdf8'];
+
+  class Particle {
+    constructor() { this.reset(true); }
+    reset(init = false) {
+      this.x    = Math.random() * W;
+      this.y    = init ? Math.random() * H : H + 10;
+      this.r    = Math.random() * 1.5 + 0.3;
+      this.c    = COLORS[Math.floor(Math.random() * COLORS.length)];
+      this.vy   = -(Math.random() * 0.4 + 0.1);
+      this.vx   = (Math.random() - .5) * 0.2;
+      this.life = 0;
+      this.maxLife = 200 + Math.random() * 300;
+    }
+    update() {
+      this.x += this.vx; this.y += this.vy; this.life++;
+      if (this.life > this.maxLife || this.y < -10) this.reset();
+    }
+    draw() {
+      const alpha = Math.sin((this.life / this.maxLife) * Math.PI) * 0.6;
+      ctx.globalAlpha = alpha;
+      ctx.fillStyle   = this.c;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  const N = 80;
+  for (let i = 0; i < N; i++) particles.push(new Particle());
+
+  function loop() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => { p.update(); p.draw(); });
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(loop);
+  }
+  loop();
+}
+
+/* ============================================================
+   KEYBOARD SHORTCUTS
+============================================================ */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeModal();
+    closeShare();
+    closeFocusMode();
+  }
+});
+
+  </script>
+</body>
+</html>

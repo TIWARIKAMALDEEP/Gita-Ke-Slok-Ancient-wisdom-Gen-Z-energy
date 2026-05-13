@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gita Ke Slok — Ancient Wisdom, Gen Z Energy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ANIMATED BACKGROUND  -->
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+  </div>
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <!--NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" onclick="showSection('home')">
+        <span class="logo-icon">☸</span>
+        <span class="logo-text">Gita Ke Slok</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#" class="nav-link active" data-section="home" onclick="showSection('home')">Home</a></li>
+        <li><a href="#" class="nav-link" data-section="explore" onclick="showSection('explore')">Explore</a></li>
+        <li><a href="#" class="nav-link" data-section="daily" onclick="showSection('daily')">Daily</a></li>
+        <li><a href="#" class="nav-link" data-section="quiz" onclick="showSection('quiz')">Quiz</a></li>
+        <li><a href="#" class="nav-link" data-section="moment" onclick="showSection('moment')">✨ Moment</a></li>
+        <li><a href="#" class="nav-link" data-section="mood" onclick="showSection('mood')">🌙 Mood</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Streak Counter -->
+        <div class="streak-badge" title="Your daily streak">
+          <span class="streak-fire">🔥</span>
+          <span class="streak-count" id="streak-count">0</span>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- = MAIN WRAPPER = -->
+  <main class="main-wrap">
+
+    <!-- =SECTION: HOME = -->
+    <section class="section active" id="section-home">
+
+      <!-- Hero -->
+        <div class="hero">
+          <div class="hero-image fade-up">
+          <img src="krishna.jpg" alt="Bhagwan Shree Krishna" />
+        </div>
+        <div class="hero-badge fade-up">✨ Ancient Wisdom · Modern Vibes</div>
+        <h1 class="hero-title fade-up">
+          Life advice from<br />
+          <span class="gradient-text">5000 years ago</span><br />
+          that still hits.
+        </h1>
+        <p class="hero-sub fade-up">The Bhagavad Gita — but make it Gen Z. No cap, pure wisdom. 🙏</p>
+        <div class="hero-cta fade-up">
+          <button class="btn-primary" onclick="showSection('explore')">Explore Shlokas</button>
+          <button class="btn-ghost" onclick="showSection('daily')">Today's Shloka</button>
+        </div>
+
+        <!-- Stat Chips -->
+        <div class="stat-row fade-up">
+          <div class="stat-chip">📖 18 Chapters</div>
+          <div class="stat-chip">⚡ 700 Verses</div>
+          <div class="stat-chip">🧠 Infinite Wisdom</div>
+        </div>
+      </div>
+
+      <!-- Daily Shloka Preview Card -->
+      <div class="section-label fade-up">Today's Vibe Check ⬇</div>
+      <div id="home-daily-card" class="daily-card glass-card fade-up"></div>
+
+      <!-- Category Grid -->
+      <div class="section-label fade-up">Browse by Topic</div>
+      <div class="category-grid fade-up">
+        <button class="cat-card cat-motivation" onclick="filterCategory('Motivation')">
+          <span class="cat-icon">🔥</span>
+          <span class="cat-name">Motivation</span>
+          <span class="cat-desc">Get pumped up</span>
+        </button>
+        <button class="cat-card cat-stress" onclick="filterCategory('Stress')">
+          <span class="cat-icon">🧘</span>
+          <span class="cat-name">Stress</span>
+          <span class="cat-desc">Find your calm</span>
+        </button>
+        <button class="cat-card cat-life" onclick="filterCategory('Life Lessons')">
+          <span class="cat-icon">💡</span>
+          <span class="cat-name">Life Lessons</span>
+          <span class="cat-desc">Big brain energy</span>
+        </button>
+        <button class="cat-card cat-discipline" onclick="filterCategory('Discipline')">
+          <span class="cat-icon">⚔️</span>
+          <span class="cat-name">Discipline</span>
+          <span class="cat-desc">Stay on track</span>
+        </button>
+      </div>
+
+    </section>
+
+    <!-- ==SECTION: EXPLORE == -->
+    <section class="section" id="section-explore">
+
+      <div class="section-header fade-up">
+        <h2 class="section-title">Shloka Library <span class="emoji-badge">📚</span></h2>
+        <p class="section-sub">All the wisdom, zero boring vibes.</p>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-wrap fade-up">
+        <div class="search-box glass-card">
+          <span class="search-icon">🔍</span>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search by keyword — 'anger', 'focus', 'karma'..."
+            autocomplete="off"
+          />
+          <button class="search-clear" id="search-clear" onclick="clearSearch()" aria-label="Clear search">✕</button>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="filter-pills fade-up" id="filter-pills">
+        <button class="pill active" data-cat="All" onclick="filterCategory('All')">All</button>
+        <button class="pill" data-cat="Motivation" onclick="filterCategory('Motivation')">🔥 Motivation</button>
+        <button class="pill" data-cat="Stress" onclick="filterCategory('Stress')">🧘 Stress</button>
+        <button class="pill" data-cat="Life Lessons" onclick="filterCategory('Life Lessons')">💡 Life Lessons</button>
+        <button class="pill" data-cat="Discipline" onclick="filterCategory('Discipline')">⚔️ Discipline</button>
+      </div>
+
+      <!-- Results Count -->
+      <div class="results-count fade-up" id="results-count"></div>
+
+      <!-- Shloka Grid -->
+      <div class="shloka-grid" id="shloka-grid"></div>
+
+    </section>
+
+    <!-- == SECTION: DAILY == -->
+    <section class="section" id="section-daily">
+
+      <div class="section-header fade-up">
+        <h2 class="section-title">Daily Shloka <span class="emoji-badge">⭐</span></h2>
+        <p class="section-sub">One verse a day keeps the existential crisis away.</p>
+      </div>
+
+      <div id="daily-full-card" class="daily-full-wrap fade-up"></div>
+
+    </section>
+
+    <!-- == SECTION: QUIZ ==-->
+    <section class="section" id="section-quiz">
+
+      <div class="section-header fade-up">
+        <h2 class="section-title">Quiz Mode <span class="emoji-badge">🎯</span></h2>
+        <p class="section-sub">Test your wisdom. No cheating bhai.</p>
+      </div>
+
+      <div class="quiz-wrap fade-up" id="quiz-wrap"></div>
+
+    </section>
+
+  </main>
+     <!-- == SECTION: MOMENT ==-->
+   <section class="section" id="section-moment">
+     <div class="section-header fade-up">
+       <h2 class="section-title">Shloka of the Moment <span class="emoji-badge">🎴</span></h2>
+       <p class="section-sub">Ek click — ek naya gyaan. Shake your soul! ✨</p>
+     </div>
+
+     <div class="moment-wrap fade-up">
+       <div class="moment-orb-wrap">
+         <button class="moment-orb" id="moment-orb" onclick="drawMomentShloka()">
+           <div class="orb-inner">
+             <span class="orb-symbol">☸</span>
+             <span class="orb-text">Tap for<br/>Wisdom</span>
+           </div>
+           <div class="orb-ring orb-ring-1"></div>
+           <div class="orb-ring orb-ring-2"></div>
+           <div class="orb-ring orb-ring-3"></div>
+         </button>
+          <p class="moment-hint">📱 Shake your phone or click the orb</p>
+       </div>
+       <div class="moment-card glass-card" id="moment-card" style="display:none"></div>
+     </div>
+   </section>
+    <!-- ======== SECTION: MOOD ======== -->
+   <section class="section" id="section-mood">
+     <div class="section-header fade-up">
+       <h2 class="section-title">Mood Check <span class="emoji-badge">🌙</span></h2>
+       <p class="section-sub">Aaj kaisa feel ho raha hai? Krishna ke paas answer hai. 🙏</p>
+     </div>
+
+     <div class="mood-wrap fade-up">
+       <div class="mood-grid" id="mood-grid">
+         <button class="mood-btn" data-mood="anxious" onclick="selectMood(this)">
+           <span class="mood-emoji">😰</span>
+           <span class="mood-label">Anxious / Stressed</span>
+           <span class="mood-sub">Bohot tension hai</span>
+         </button>
+         <button class="mood-btn" data-mood="lost" onclick="selectMood(this)">
+           <span class="mood-emoji">🌫️</span>
+            <span class="mood-label">Lost / Confused</span>
+           <span class="mood-sub">Kuch samajh nahi aa raha</span>
+         </button>
+         <button class="mood-btn" data-mood="unmotivated" onclick="selectMood(this)">
+           <span class="mood-emoji">😔</span>
+           <span class="mood-label">Unmotivated</span>
+           <span class="mood-sub">Karne ka mann nahi</span>
+         </button>
+         <button class="mood-btn" data-mood="angry" onclick="selectMood(this)">
+           <span class="mood-emoji">😤</span>
+           <span class="mood-label">Angry</span>
+           <span class="mood-sub">Gussa aa raha hai</span>
+         </button>
+         <button class="mood-btn" data-mood="sad" onclick="selectMood(this)">
+           <span class="mood-emoji">💔</span>
+           <span class="mood-label">Sad / Heartbroken</span>
+           <span class="mood-sub">Dil bhaari hai</span>
+         </button>
+         <button class="mood-btn" data-mood="pumped" onclick="selectMood(this)">
+           <span class="mood-emoji">🔥</span>
+           <span class="mood-label">Pumped Up!</span>
+           <span class="mood-sub">Aaj kuch karna hai</span>
+         </button>
+       </div>
+
+    <div class="mood-result" id="mood-result" style="display:none">
+      <div class="mood-result-label" id="mood-result-label"></div>
+      <div class="mood-result-cards" id="mood-result-cards"></div>
+      <button class="btn-ghost" style="margin-top:28px" onclick="resetMood()">← Choose Different Mood</button>
+    </div>
+  </div>
+</section>
+
+  <!-- ============ SHLOKA DETAIL MODAL ============ -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal()">
+    <div class="modal glass-card" id="modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- ============ SHARE CARD MODAL ============ -->
+  <div class="modal-overlay" id="share-overlay" onclick="closeShare()">
+    <div class="modal share-modal glass-card" id="share-modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeShare()" aria-label="Close">✕</button>
+      <div class="share-preview" id="share-preview"></div>
+      <div class="share-actions">
+        <button class="btn-primary" onclick="copyShareText()">📋 Copy Text</button>
+        <span class="share-note">Screenshot & share on your stories! 📸</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TOAST ============ -->
+  <div class="toast" id="toast"></div>
+
+  <!-- ============ FOCUS MODE ============ -->
+  <div class="focus-overlay" id="focus-overlay">
+    <button class="focus-close" onclick="closeFocusMode()" aria-label="Exit focus mode">✕ Exit Focus</button>
+    <div class="focus-content" id="focus-content"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
